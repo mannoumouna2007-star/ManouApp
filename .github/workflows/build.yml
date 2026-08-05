@@ -17,9 +17,10 @@ jobs:
         python-version: '3.10'
 
     - name: Build with Buildozer
-      uses: ArtemSBulgakov/buildozer-action@v1
+      uses: Skymatix/buildozer-action@v2
       id: buildozer
       with:
+        buildozer_version: master
         command: buildozer -v android debug
 
     - name: Upload APK Artifact
@@ -27,3 +28,4 @@ jobs:
       with:
         name: package
         path: bin/*.apk
+
